@@ -15,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -85,16 +86,8 @@ public class App extends Application {
 	
 	//Initialize home page
 	public static void toHomePage(){
-		String userInfor = "Fist Name: " + App.user.getFirstName()
-						+ "\r\nLast Name: "+ App.user.getLastName()
-						+ "\r\nPhone Number: "+ App.user.getPhoneNumber()
-						+ "\r\nUsername: "+ App.user.getUsername();
-		HBox home = (HBox) loadFXML("HomePage");
-		Label userInformation = (Label)home.lookup("#userInformation");
-		userInformation.setText(userInfor);
-		
 		root.getChildren().clear();
-		root.getChildren().add(home);
+		root.getChildren().add(loadFXML("HomePage"));
 	}
 
 	public static void toUpdateUserPage() {
@@ -133,7 +126,8 @@ public class App extends Application {
 		updateUserPage.sizeToScene();
 		updateUserPage.setResizable(false);
 		updateUserPage.initModality(Modality.APPLICATION_MODAL);
-		updateUserPage.show();
+		updateUserPage.showAndWait();
+		
 	}
 	
 	

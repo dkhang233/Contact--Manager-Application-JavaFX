@@ -1300,5 +1300,37 @@ a.badge:hover, a.badge:focused {
 
 .separator {
   -fx-padding: 5 0 5 0; }
+  
+  
+.navigation-hyperlink {
+    -fx-text-fill: #000;
+    -fx-border-color: #888;
+    -fx-border-width: 1 0 0 0;
+     -fx-underline: false;
+}
+
+/*.navigation-hyperlink:visited {
+    -fx-text-fill: #6C3483;
+    -fx-border-style: none;
+    -fx-underline: false;
+}*/
+
+
+.navigation-hyperlink:hover {
+    -fx-underline: false;
+    -fx-text-fill: #3498DB;
+    -fx-background-color: #D7DBDD;
+}
+
+.navigation-hyperlink:focused {
+    -fx-underline: false;
+    -fx-background-color: #7F8C8D ;
+}
+
+.title-label{
+	-fx-border-color: #888;
+    -fx-border-width: 1 0 0 0;
+}
+
 
 /*# sourceMappingURL=bootstrapfx.css.map */

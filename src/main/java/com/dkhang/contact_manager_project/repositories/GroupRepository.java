@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import com.dkhang.contact_manager_project.models.Group;
 
 public class GroupRepository {
+	
+	// Database configuration
 	private static final String URL = "jdbc:mysql://localhost:3306/contact_manager_system";
 	private static final String USERNAME = "springstudent";
 	private static final String PASSWORD = "springstudent";

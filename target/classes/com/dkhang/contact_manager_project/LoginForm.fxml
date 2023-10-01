@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -11,25 +12,39 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="518.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dkhang.contact_manager_project.controllers.UserController">
+<VBox prefHeight="560.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dkhang.contact_manager_project.controllers.UserController">
    <children>
-         <AnchorPane prefHeight="561.0" prefWidth="840.0">
+         <AnchorPane prefHeight="558.0" prefWidth="799.0">
          <children>
-            <Button layoutX="388.0" layoutY="371.0" mnemonicParsing="false" onAction="#login" prefHeight="34.0" prefWidth="81.0" text="Login" />
-            <TextField fx:id="phoneNumber" layoutX="240.0" layoutY="271.0" prefHeight="38.0" prefWidth="359.0" promptText="Phone Number" />
+            <Button layoutX="388.0" layoutY="371.0" mnemonicParsing="false" onAction="#login" prefHeight="34.0" prefWidth="81.0" stylesheets="@../../../css/style.css" text="Login">
+               <styleClass>
+                  <String fx:value="btn-success" />
+                  <String fx:value="btn" />
+               </styleClass></Button>
+            <TextField fx:id="phoneNumber" layoutX="239.0" layoutY="259.0" prefHeight="38.0" prefWidth="359.0" promptText="Phone Number" />
             <PasswordField fx:id="password" layoutX="239.0" layoutY="318.0" prefHeight="38.0" prefWidth="359.0" promptText="Password" />
-            <Label fx:id="loginStatus" contentDisplay="CENTER" layoutX="246.0" layoutY="213.0" prefHeight="34.0" prefWidth="350.0" textAlignment="CENTER" />
+            <Label fx:id="loginStatus" contentDisplay="CENTER" layoutX="243.0" layoutY="207.0" prefHeight="34.0" prefWidth="350.0" textAlignment="CENTER" />
             <Hyperlink fx:id="register" alignment="CENTER" contentDisplay="CENTER" layoutX="323.0" layoutY="439.0" onAction="#register" prefHeight="51.0" prefWidth="210.0" text="Register now !" />
-            <ImageView fitHeight="164.0" fitWidth="188.0" layoutX="338.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="107.0" fitWidth="116.0" layoutX="365.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../static/icons8-snapchat-400.png" />
+                  <Image url="@../../../static/icons8-snapchat.gif" />
                </image>
             </ImageView>
-            <Label layoutX="326.0" layoutY="103.0" prefHeight="121.0" prefWidth="338.0" text="Social Application">
+            <Label layoutX="323.0" layoutY="148.0" prefHeight="58.0" prefWidth="210.0" text="Social Application">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
+            <ImageView fitHeight="38.0" fitWidth="50.0" layoutX="180.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../static/icons8-user-48.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="50.0" layoutX="180.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../static/icons8-password-50.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

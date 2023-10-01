@@ -110,7 +110,7 @@ public class RegisterController {
 						+ " -fx-text-fill: #fcf8e3;");
 					
 				registerStatus.setText("Update Successfully !");
-				App.toHomePage();
+				
 			}
 		
 		}
