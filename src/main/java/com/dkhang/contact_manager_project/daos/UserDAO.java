@@ -1,4 +1,4 @@
-package com.dkhang.contact_manager_project.repositories;
+package com.dkhang.contact_manager_project.daos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,27 +6,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.dkhang.contact_manager_project.App;
 import com.dkhang.contact_manager_project.models.User;
 
-public class UserRepository {
-	
-	// Database configuration
-	private static final String URL = "jdbc:mysql://localhost:3306/contact_manager_system";
-	private static final String USERNAME = "springstudent";
-	private static final String PASSWORD = "springstudent";
-	
+public class UserDAO extends BaseDAO{
 	private Connection connection; // manages the connection
 	private PreparedStatement selectUserByPhoneNumber;
 	private PreparedStatement insertUser;
 	private PreparedStatement updateUser;
+	private PreparedStatement deleteUser;
 	
 	//Initialize connection and prepared statement
-	public UserRepository() {
+	public UserDAO() {
 		try {
 			this.connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			selectUserByPhoneNumber = this.connection.prepareStatement("select * from _users where phone_number = ?");
 			insertUser = this.connection.prepareStatement("insert into _users(first_name,last_name,phone_number,password,username,is_used) values(?,?,?,?,?,?)");
 			updateUser = this.connection.prepareStatement("update _users set first_name=?, last_name=?,phone_number=?,password=?,username=? where id = ?");
+			deleteUser = this.connection.prepareStatement("delete from _users where id = ?");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -42,13 +39,13 @@ public class UserRepository {
 			if(!resultSet.next()) {
 				return null;
 			}
-			user.setId(resultSet.getInt("id"))
-				.setFirstName(resultSet.getString("first_name"))
-				.setLastName(resultSet.getString("last_name"))
-				.setPhoneNumber(resultSet.getString("phone_number"))
-				.setPassword(resultSet.getString("password"))
-				.setUsername(resultSet.getString("username"))
-				.setUsed(resultSet.getBoolean("is_used"));
+			user.setId(resultSet.getInt("id"));
+			user.setFirstName(resultSet.getString("first_name"));
+			user.setLastName(resultSet.getString("last_name"));
+			user.setPhoneNumber(resultSet.getString("phone_number"));
+			user.setPassword(resultSet.getString("password"));
+			user.setUsername(resultSet.getString("username"));
+			user.setIsUsed(resultSet.getBoolean("is_used"));
 		} catch (SQLException e) {
 			close();
 			e.printStackTrace();
@@ -88,6 +85,17 @@ public class UserRepository {
 			
 			updateUser.executeUpdate();
 		} catch (SQLException e) {
+			close();
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteUser() {
+		try {
+			deleteUser.setInt(1, App.user.getId());
+			deleteUser.executeUpdate();
+		} catch (SQLException e) {
+			close();
 			e.printStackTrace();
 		}
 	}

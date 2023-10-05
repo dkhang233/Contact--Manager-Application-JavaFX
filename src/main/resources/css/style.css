@@ -1332,5 +1332,22 @@ a.badge:hover, a.badge:focused {
     -fx-border-width: 1 0 0 0;
 }
 
+.vbox-border{
+-fx-border-color: #888;
+    -fx-border-width: 1 1 0 0;
+}
+
+.label-danger{
+	-fx-padding: 8px 20px;
+ 	-fx-background-color: #f8d7da;
+  	-fx-text-fill: #721c24;
+}
+
+.label-success{
+	-fx-padding: 8px 20px;
+	-fx-background-color: #3c763d;
+	-fx-text-fill: #fcf8e3;
+}
+
 
 /*# sourceMappingURL=bootstrapfx.css.map */

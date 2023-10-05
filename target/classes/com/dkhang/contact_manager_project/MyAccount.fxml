@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="BASELINE_LEFT" hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="641.0" vgap="8.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dkhang.contact_manager_project.controllers.AccountController">
+<GridPane alignment="BASELINE_LEFT" hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="621.0" vgap="8.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dkhang.contact_manager_project.controllers.AccountController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="10.0" prefWidth="295.4000244140625" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="304.79998779296875" minWidth="10.0" prefWidth="273.5999755859375" />
@@ -61,13 +61,13 @@
       </Label>
       <TextField fx:id="username" editable="false" style="-fx-background-radius: 0;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
       <Label text="Username" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateUser" prefHeight="18.0" prefWidth="127.0" stylesheets="@../../../css/style.css" text="Update Account" GridPane.columnIndex="1" GridPane.rowIndex="5">
+      <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateUser" prefHeight="18.0" prefWidth="127.0" stylesheets="@../../../css/style.css" text="Update Account" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
          <styleClass>
             <String fx:value="btn-success" />
             <String fx:value="btn" />
          </styleClass>
       </Button>
-      <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteUser" prefHeight="28.0" prefWidth="127.0" stylesheets="@../../../css/style.css" text="Delete Account" GridPane.columnIndex="1" GridPane.rowIndex="6">
+      <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteUser" prefHeight="28.0" prefWidth="127.0" stylesheets="@../../../css/style.css" text="Delete Account" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
          <styleClass>
             <String fx:value="btn-danger" />
             <String fx:value="btn" />

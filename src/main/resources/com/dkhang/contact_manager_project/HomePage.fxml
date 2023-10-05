@@ -22,8 +22,8 @@
          <children>
             <HBox prefHeight="59.0" prefWidth="606.0">
                <children>
-                  <TextField fx:id="nameGroupOrUser" prefHeight="53.0" prefWidth="552.0" promptText="Find group or user by name" />
-                  <Button fx:id="findButton" mnemonicParsing="false" onAction="#findGroupOrUser" prefHeight="54.0" prefWidth="99.0">
+                  <TextField fx:id="groupName" prefHeight="53.0" prefWidth="552.0" promptText="Find group by name" />
+                  <Button fx:id="findGroupButton" mnemonicParsing="false" onAction="#findGroupByName" prefHeight="54.0" prefWidth="99.0">
                      <graphic>
                         <ImageView fitHeight="33.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -32,53 +32,46 @@
                         </ImageView>
                      </graphic>
                      <HBox.margin>
-                        <Insets right="10.0" />
+                        <Insets right="8.0" />
                      </HBox.margin>
                   </Button>
                </children>
             </HBox>
-            <ListView fx:id="listGroupsAndUsers" prefHeight="329.0" prefWidth="646.0" />
-            <HBox prefHeight="148.0" prefWidth="636.0">
+            <ListView fx:id="mainGroupList" prefHeight="329.0" prefWidth="646.0" />
+            <HBox alignment="CENTER" prefHeight="148.0" prefWidth="636.0">
                <children>
-                  <VBox prefHeight="141.0" prefWidth="502.0">
+                  <VBox prefHeight="139.0" prefWidth="503.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="474.0" text="Details">
+                        <Label alignment="CENTER" prefHeight="26.0" prefWidth="506.0" text="Description">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Label>
                         <Separator prefWidth="200.0" />
-                        <Label fx:id="details" prefHeight="111.0" prefWidth="475.0" />
+                        <Label fx:id="description" prefHeight="111.0" prefWidth="454.0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin></Label>
                      </children>
                   </VBox>
-                  <Separator orientation="VERTICAL" prefHeight="59.0" prefWidth="10.0" />
-                  <VBox alignment="CENTER" prefHeight="141.0" prefWidth="170.0">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#updateGroup" prefHeight="30.0" prefWidth="123.0" stylesheets="@../../../css/style.css" text="Update Group">
-                           <styleClass>
-                              <String fx:value="btn-success" />
-                              <String fx:value="btn" />
-                           </styleClass>
-                        </Button>
-                        <Separator prefHeight="15.0" prefWidth="123.0" />
-                        <Button mnemonicParsing="false" onAction="#deleteGroup" prefHeight="30.0" prefWidth="122.0" stylesheets="@../../../css/style.css" text="Delete Group">
-                           <styleClass>
-                              <String fx:value="btn-danger" />
-                              <String fx:value="btn" />
-                           </styleClass>
-                        </Button>
-                     </children>
-                     <padding>
-                        <Insets right="10.0" />
-                     </padding>
-                  </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Button fx:id="joinGroupButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#joinGroup" prefHeight="27.0" prefWidth="66.0" style="-fx-background-color: #2E86C1;" stylesheets="@../../../css/style.css" text="Join">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-info" />
+                     </styleClass>
+                  </Button>
+                  
                </children>
             </HBox>
          </children>
       </VBox>
    </center>
    <left>
-      <VBox prefHeight="518.0" prefWidth="170.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="518.0" prefWidth="170.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="369.0" prefWidth="198.0">
                <children>
@@ -114,8 +107,7 @@
                   </Hyperlink>
                </children>
             </VBox>
-            <Separator prefHeight="10.0" prefWidth="202.0" />
-            <VBox alignment="CENTER" prefHeight="133.0" prefWidth="202.0">
+            <VBox alignment="CENTER" prefHeight="133.0" prefWidth="202.0" styleClass="title-label" stylesheets="@../../../css/style.css">
                <children>
                   <Button mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="126.0" stylesheets="@../../../css/style.css" text="Log Out">
                      <styleClass>

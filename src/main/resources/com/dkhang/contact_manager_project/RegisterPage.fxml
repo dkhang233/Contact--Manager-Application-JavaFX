@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
@@ -13,39 +11,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" prefHeight="444.0" prefWidth="389.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dkhang.contact_manager_project.controllers.RegisterController">
+<Pane stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="106.0" prefWidth="390.0">
+      <VBox alignment="CENTER" layoutY="0.800000011920929" prefHeight="444.0" prefWidth="389.0">
          <children>
-            <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="163.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../static/icons8-writer-male-64.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="title" alignment="CENTER" contentDisplay="TOP" layoutX="69.0" layoutY="75.0" prefHeight="32.0" prefWidth="269.0" text="Register Now !!!">
-               <font>
-                  <Font name="Arial Black" size="12.0" />
-               </font>
-            </Label>
+            <Pane prefHeight="106.0" prefWidth="390.0">
+               <children>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="163.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../static/icons8-writer-male-64.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="title" alignment="CENTER" contentDisplay="TOP" layoutX="68.0" layoutY="70.0" prefHeight="32.0" prefWidth="269.0" text="My Account">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Separator prefHeight="5.0" prefWidth="390.0" />
+            <AnchorPane prefHeight="338.0" prefWidth="390.0">
+               <children>
+                  <Label fx:id="registerStatus" layoutX="36.0" layoutY="14.0" prefHeight="26.0" prefWidth="316.0" />
+                  <TextField fx:id="firstName" layoutX="36.0" layoutY="54.0" prefHeight="32.0" prefWidth="316.0" promptText="First Name" />
+                  <TextField fx:id="lastName" layoutX="36.0" layoutY="96.0" prefHeight="32.0" prefWidth="316.0" promptText="Last Name" />
+                  <TextField fx:id="phoneNumber" layoutX="38.0" layoutY="142.0" prefHeight="32.0" prefWidth="316.0" promptText="Phone Number" />
+                  <PasswordField fx:id="password" layoutX="36.0" layoutY="190.0" prefHeight="32.0" prefWidth="316.0" promptText="Password" />
+                  <TextField fx:id="username" layoutX="38.0" layoutY="232.0" prefHeight="32.0" prefWidth="316.0" promptText="Username" />
+               </children>
+            </AnchorPane>
          </children>
-      </Pane>
-      <Separator prefHeight="5.0" prefWidth="390.0" />
-      <AnchorPane prefHeight="338.0" prefWidth="390.0">
-         <children>
-            <Label fx:id="registerStatus" layoutX="36.0" layoutY="14.0" prefHeight="26.0" prefWidth="316.0" />
-            <TextField fx:id="firstName" layoutX="36.0" layoutY="54.0" prefHeight="32.0" prefWidth="316.0" promptText="First Name" />
-            <TextField fx:id="lastName" layoutX="36.0" layoutY="96.0" prefHeight="32.0" prefWidth="316.0" promptText="Last Name" />
-            <TextField fx:id="phoneNumber" layoutX="38.0" layoutY="142.0" prefHeight="32.0" prefWidth="316.0" promptText="Phone Number" />
-            <PasswordField fx:id="password" layoutX="36.0" layoutY="190.0" prefHeight="32.0" prefWidth="316.0" promptText="Password" />
-            <TextField fx:id="username" layoutX="38.0" layoutY="232.0" prefHeight="32.0" prefWidth="316.0" promptText="Username" />
-            <Button fx:id="registerButton" layoutX="146.0" layoutY="282.0" mnemonicParsing="false" onAction="#register" prefHeight="32.0" prefWidth="82.0" stylesheets="@../../../css/style.css" text="Register">
-               <styleClass>
-                  <String fx:value="btn-success" />
-                  <String fx:value="btn" />
-               </styleClass>
-            </Button>
-         </children>
-      </AnchorPane>
+      </VBox>
    </children>
-</VBox>
+</Pane>
